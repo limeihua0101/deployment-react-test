@@ -17,5 +17,9 @@ jobs:
             - run: npm i yarn
             - run: yarn build
               env:
-                  HELLOW: ${{secrets.HELLOW}}
-            - run: echo "HELLOW = $HOLLOW"
+                  SSH_KEY: ${{secrets.SSH_KEY}}
+                  SSH_PASSWORD: ${{secrets.SSH_PASSWORD}}
+            - run: echo " SSH_KEY = $SSH_KEY"
+            - run: ssh ${{secrets.SSH_KEY}}
+            - run: ${{secretes.SSH_KEY}}'s password:${{secrets.SSH_PASSWORD}}
+            - run: echo "Successful !!"
