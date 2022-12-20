@@ -11,8 +11,6 @@ jobs:
               with:
                   node-version: 16
             - run: npm i yarn
-            #   - run: yarn test
-            #  - run: echo "test is Success !!"
             - run: yarn build
             - run: echo "build is Success !!"
             name: connection ubuntu server
