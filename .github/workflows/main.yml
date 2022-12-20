@@ -5,6 +5,6 @@ on: [push]
 jobs:
     steps:
     - name: Hello world action
-        env: # Or as an environment variable
+        env: 
          hellow_secret: ${{ secrets.HELLOW }}
        
