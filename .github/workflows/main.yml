@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is testing
 on: [push]
 
 jobs:
-    build:
+    deployment:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -13,10 +13,14 @@ jobs:
             - run: npm i yarn
             - run: yarn build
             - run: echo "build is Success !!"
-            - run: echo "connection ubuntu server"
-            - run: ssh ${process.env.REACT_APP_UBUNTU_SSH_KEY}
-            - run: echo "ubuntu sercer connection Success !!"
-            - run: echo "git pull"
-            - run: cd ${process.env.REACT_APP_UBUNTU_SERVER_FILE_PATH}
-            - run: git pull origin develop
-            - run: echo "git pull Sucess !! "
+            env: 
+                SAY_HELLOW: ${{secrets.SAY_HELLOW}}
+             name: test env file SAY_HELLOW
+             - run: echo "SAY_HELLOW = $SAY_HELLOW"
+            # name: echo "connection ubuntu server"
+            #- run: ssh ${process.env.REACT_APP_UBUNTU_SSH_KEY}
+            #- run: echo "ubuntu sercer connection Success !!"
+            #- run: echo "git pull"
+            #- run: cd ${process.env.REACT_APP_UBUNTU_SERVER_FILE_PATH}
+            #- run: git pull origin develop
+            #- run: echo "git pull Sucess !! "
