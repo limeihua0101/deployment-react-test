@@ -2,7 +2,7 @@
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
 name: deployment test
-run-name: ${{github.actor}} test deployment test4
+run-name: ${{github.actor}} test deployment test6
 
 on: [push]
 
@@ -21,8 +21,9 @@ jobs:
                   SSH_USERNAME: ${{secrets.SSH_USERNAME}}
                   SSH_PASSWORD: ${{secrets.SSH_PASSWORD}}
                   SSH_PORT: ${{secrets.SSH_PORT}}
-            - uses: ./
+
             - run: echo " SSH_KEY = $SSH_KEY"
+            - run: cd C:\Users\meihua
             - run: ssh ${secrets.SSH_USERNAME}@${{secrets.SSH_HOST}}
             - run: password:${{secrets.SSH_PASSWORD}}
             - run: echo "Successful !!"
