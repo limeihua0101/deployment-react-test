@@ -13,10 +13,10 @@ jobs:
             - run: npm i yarn
             - run: yarn build
             - run: echo "build is Success !!"
-            name: connection ubuntu server
+            - run: echo "connection ubuntu server"
             #- run: ssh ${process.env.REACT_APP_UBUNTU_SSH_KEY}
             - run: echo "ubuntu sercer connection Success !!"
-            name: git pull 
+            - run: echo "git pull"
             #- run: cd ${process.env.REACT_APP_UBUNTU_SERVER_FILE_PATH}
             #- run: git pull origin develop
             - run: echo "git pull Sucess !! "
