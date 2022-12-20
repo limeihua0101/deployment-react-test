@@ -4,4 +4,4 @@ on: [push]
 
 jobs:
     steps:
-        - name: Hello world action
+        name: Hello world action
