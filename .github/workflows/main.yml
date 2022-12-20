@@ -3,5 +3,25 @@ run-name: ${{ github.actor }} is testing
 on: [push]
 
 jobs:
-    steps:
-        name: Hello world action
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+             with:
+                  node-version: 16
+            #- run: npm i yarn
+            #- run: yarn build
+            - run: echo "build is Success !!"
+            #- name: hello world Action
+            #env:
+            #    SAY_HELLOW: ${{secrets.SAY_HELLOW}}
+            #- run: echo "test env file SAY_HELLOW"
+            - run: echo "SAY_HELLOW = $SAY_HELLOW"
+            # name: echo "connection ubuntu server"
+            #- run: ssh ${process.env.REACT_APP_UBUNTU_SSH_KEY}
+            #- run: echo "ubuntu sercer connection Success !!"
+            #- run: echo "git pull"
+            #- run: cd ${process.env.REACT_APP_UBUNTU_SERVER_FILE_PATH}
+            #- run: git pull origin develop
+            #- run: echo "git pull Sucess !! "
