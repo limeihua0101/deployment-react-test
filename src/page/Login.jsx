@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
+    const ubuntu_ssh_key = process.env.REACT_APP_UBUNTU_SSH_KEY;
+    console.log(`REACT_APP_UBUNTU_SSH_KEY   === ${ubuntu_ssh_key}`);
 
     const navigate = useNavigate();
     const [userInfo, setUserInfo] = useState({
@@ -11,7 +12,6 @@ export const Login = () => {
     });
 
     const handleInputChange = (target) => {
-        
         const { name, value } = target;
 
         switch (name) {
@@ -34,7 +34,8 @@ export const Login = () => {
     };
     return (
         <div>
-            <h1>Login Page</h1>
+            <h1>Login Page </h1>
+            <h1>GITHUB ACTION DEPLOYMENT TEST</h1>
             <form action="">
                 <input
                     type="text"
