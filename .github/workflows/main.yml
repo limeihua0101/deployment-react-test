@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is testing
 on: [push]
 
 jobs:
-    deployment:
+    build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
