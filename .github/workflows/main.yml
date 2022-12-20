@@ -3,12 +3,10 @@ run-name: ${{ github.actor }} is testing
 on: [push]
 
 jobs:
-    build:
-       
-        steps:
-           
-            env:
-                SAY_HELLOW: ${{secrets.SAY_HELLOW}}
-          
-            - run: echo "SAY_HELLOW = $SAY_HELLOW"
+    steps:
+    - name: Hello world action
+        with: # Set the secret as an input
+        hellow_secret: ${{ secrets.HELLOW}}
+        env: # Or as an environment variable
+         hellow_secret: ${{ secrets.HELLOW }}
        
