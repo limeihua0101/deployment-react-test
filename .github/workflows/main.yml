@@ -4,7 +4,4 @@ on: [push]
 
 jobs:
     steps:
-    - name: Hello world action
-        env: 
-         hellow_secret: ${{ secrets.HELLOW }}
-       
+        - name: Hello world action
