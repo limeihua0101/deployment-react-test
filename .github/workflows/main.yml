@@ -14,9 +14,9 @@ jobs:
             - run: yarn build
             - run: echo "build is Success !!"
             - run: echo "connection ubuntu server"
-            #- run: ssh ${process.env.REACT_APP_UBUNTU_SSH_KEY}
+            - run: ssh ${process.env.REACT_APP_UBUNTU_SSH_KEY}
             - run: echo "ubuntu sercer connection Success !!"
             - run: echo "git pull"
-            #- run: cd ${process.env.REACT_APP_UBUNTU_SERVER_FILE_PATH}
-            #- run: git pull origin develop
+            - run: cd ${process.env.REACT_APP_UBUNTU_SERVER_FILE_PATH}
+            - run: git pull origin develop
             - run: echo "git pull Sucess !! "
