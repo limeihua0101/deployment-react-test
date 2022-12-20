@@ -15,7 +15,7 @@ jobs:
             - run: echo "build is Success !!"
             env: 
                 SAY_HELLOW: ${{secrets.SAY_HELLOW}}
-             - name: test env file SAY_HELLOW
+             - run: echo "test env file SAY_HELLOW"
              - run: echo "SAY_HELLOW = $SAY_HELLOW"
             # name: echo "connection ubuntu server"
             #- run: ssh ${process.env.REACT_APP_UBUNTU_SSH_KEY}
