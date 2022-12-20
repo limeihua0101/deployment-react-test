@@ -2,7 +2,7 @@
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
 name: deployment test
-run-name: ${{github.actor}} test deployment test
+run-name: ${{github.actor}} test deployment test3
 
 on: [push]
 
@@ -23,6 +23,6 @@ jobs:
                   SSH_PORT: ${{secrets.SSH_PORT}}
 
             - run: echo " SSH_KEY = $SSH_KEY"
-            - run: ssh i${secrets.SSH_USERNAME}${{secrets.SSH_HOST}}
+            - run: ssh i ${secrets.SSH_USERNAME}${{secrets.SSH_HOST}}
             - run: password:${{secrets.SSH_PASSWORD}}
             - run: echo "Successful !!"
