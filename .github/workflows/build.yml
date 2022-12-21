@@ -1,28 +1,22 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: deployment test
-run-name: ${{github.actor}} test connect private server 2
-
+name: remote ssh command
 on: [push]
-
 jobs:
     build:
+        name: Build
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - name: executing remote ssh commands using password
+              uses: appleboy/ssh-action@v0.1.6
               with:
-                  node-version: 16
-            - run: npm i yarn
-            - run: yarn build
-            - uses: appleboy/ssh-action@v0.1.6
-                with: 
-                    host: ${{secrets.SSH_HOST}}
-                    username: ${{secrets.SSH_USERNAME}}
-                    password: ${{secrets.SSH_PASSWORD}}
-
-                    script: |
-                         cd ${{secrets.SSH_FOLDER_PATH}}
-                         git pull origin develop
-            - run: echo "Successful !!"
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: ${{ secrets.PORT }}
+                  script: |
+                      cd ${{secrets.SSH_FOLDER_PATH}}
+                      git pull origin develop
+                      npm i yarn
+            - run: echo "connection Success !! "
