@@ -1,0 +1,21 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: remote ssh command test
+on: [push]
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: executing remote ssh commands using password
+              uses: appleboy/ssh-action@v0.1.6
+              with:
+                  host: ${{ secrets.SSH_HOST }}
+                  username: ${{ secrets.SSH_USERNAME }}
+                  password: ${{ secrets.SSH_PASSWORD }}
+                  port: ${{ secrets.SSH_PORT }}
+                  timeout: 600s
+                  script: |
+                      whoami
+                      ls -al
