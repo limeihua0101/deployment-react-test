@@ -15,6 +15,7 @@ jobs:
                   username: ${{ secrets.SSH_USERNAME }}
                   password: ${{ secrets.SSH_PASSWORD }}
                   port: ${{ secrets.SSH_PORT }}
+                  proxy_timeout: 600s
                   script: |
                       whoami
                       ls -al
