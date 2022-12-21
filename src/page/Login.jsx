@@ -36,6 +36,7 @@ export const Login = () => {
         <div>
             <h1>Login Page </h1>
             <h1>GITHUB ACTION DEPLOYMENT TEST</h1>
+            <h1>github action connection ubuntu server !!!</h1>
             <form action="">
                 <input
                     type="text"
